@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instagram</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #ffe6f0; /* pink muda */
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar {
+      background-color: #fff0f6; /* very light pink */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .navbar-brand {
+      color: #d6336c; /* pink */
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #d6336c;
+    }
+    .friend-pic {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #d6336c;
+    }
+    .post-img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .username {
+      font-weight: 600;
+      color: #d6336c;
+    }
+    .caption {
+      font-size: 0.95rem;
+      margin-top: 5px;
+    }
+    .like-btn {
+      color: #d6336c;
+      cursor: pointer;
+      user-select: none;
+    }
+    .like-btn.liked {
+      font-weight: 700;
+    }
+    .section-title {
+      color: #a8325e;
+      font-weight: 700;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #d6336c;
+      padding-bottom: 3px;
+      font-size: 1.3rem;
+    }
+    /* Scroll horizontal for friends */
+    .friends-list {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 10px;
+    }
+    .friend-item {
+      display: inline-block;
+      text-align: center;
+      width: 80px;
+      margin-right: 15px;
+    }
+    .friend-name {
+      font-size: 0.85rem;
+      margin-top: 5px;
+      color: #5a2a40;
+      font-weight: 600;
+    }
+    /* Card shadow and spacing */
+    .card {
+      box-shadow: 0 3px 8px rgba(214, 51, 108, 0.2);
+      border: none;
+      margin-bottom: 30px;
+      background-color: #fff0f6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar sticky-top">
+    <div class="container">
+      <a href="#" class="navbar-brand">InstaClone</a>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+
+    <div class="row">
+      <!-- Profile Sidebar -->
+      <aside class="col-lg-4 mb-4">
+        <div class="text-center mb-4">
+          <img src="sipaitam.jpg" alt="Profile Picture" class="profile-pic mb-3" />
+          <h3 class="username">sipaaa_pia05</h3>
+          <p class="text-muted">sipaa</p>
+          <p>📍 Garut<br>🎂 17 years old<br></p>
+        </div>
+
+        <div>
+          <h5 class="section-title">Teman</h5>
+          <div class="friends-list">
+            <div class="friend-item">
+              <img src="sipa.c" alt="Friend 1" class="friend-pic" />
+              <div class="friend-name">rani</div>
+            </div>
+            <div class="friend-item">
+              <img src="sipa.coklt.jpg" alt="Friend 2" class="friend-pic" />
+              <div class="friend-name">suci</div>
+            </div>
+            <div class="friend-item">
+              <img src="sipa.....jpg" alt="Friend 3" class="friend-pic" />
+              <div class="friend-name">Alex</div>
+            </div>
+            <div class="friend-item">
+              <img src="sipa.jpg" alt="Friend 4" class="friend-pic" />
+              <div class="friend-name">Mia</div>
+            </div>
+            <div class="friend-item">
+              <img src="sipa123.jpg" alt="Friend 5" class="friend-pic" />
+              <div class="friend-name">David</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content: Posts -->
+      <section class="col-lg-8">
+        <h5 class="section-title mb-4">Postingan</h5>
+
+        <!-- Post Template -->
+        <div class="card">
+          <div class="d-flex align-items-center p-3">
+            <img src="sipabiru.jpg" alt="Profile" class="friend-pic me-3" />
+            <div>
+              <div class="username mb-0">sipaaa_pia05</div>
+              <small class="text-muted">2 hours ago</small>
+            </div>
+          </div>
+          <img src="dapa.jpg" alt="Post Image" class="post-img" />
+          <div class="p-3">
+            <span class="like-btn" onclick="toggleLike(this)">♡</span> 
+            <span class="like-count ms-2">1m likes</span>
+            <p class="caption mt-2"><strong>Di sukai oleh rani,aul</strong>   "hts" #single#mantap</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="d-flex align-items-center p-3">
+            <img src="aul.jpg" alt="Profile" class="friend-pic me-3" />
+            <div>
+              <div class="username mb-0">aul</div>
+              <small class="text-muted">Yesterday</small>
+            </div>
+          </div>
+          <img src="aul.jpg" alt="Post Image" class="post-img" />
+          <div class="p-3">
+            <span class="like-btn" onclick="toggleLike(this)">♡</span> 
+            <span class="like-count ms-2">100jt likes</span>
+            <p class="caption mt-2"><strong>di sukai oleh sipaaa_pia05 dan rani</strong> pagi semuanya #goodmorning #guys</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="d-flex align-items-center p-3">
+            <img src="pita.jpg" alt="Profile" class="friend-pic me-3" />
+            <div>
+              <div class="username mb-0">rani</div>
+              <small class="text-muted">3 days ago</small>
+            </div>
+          </div>
+          <img src="rani.jpg" alt="Post Image" class="post-img" />
+          <div class="p-3">
+            <span class="like-btn" onclick="toggleLike(this)">♡</span> 
+            <span class="like-count ms-2">100jt likes</span>
+            <p class="caption mt-2"><strong>di sukai oleh sipaaa_pia05,aul</strong> sore gusy#happy</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="d-flex align-items-center p-3">
+            <img src="sipa.c" alt="Profile" class="friend-pic me-3" />
+            <div>
+              <div class="username mb-0">rani</div>
+              <small class="text-muted">1 days ago</small>
+            </div>
+          </div>
+          <img src="sipa.pin.jpg" alt="Post Image" class="post-img" />
+          <div class="p-3">
+            <span class="like-btn" onclick="toggleLike(this)">♡</span> 
+            <span class="like-count ms-2">100jt likes</span>
+            <p class="caption mt-2"><strong>di sukai oleh sipaaa_pia05,aul</strong> sore gusy#happy</p>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Simple like button toggle
+    function toggleLike(element) {
+      const liked = element.classList.toggle('liked');
+      element.textContent = liked ? '❤️' : '♡';
+      
+      // Update like count number
+      const likeCountSpan = element.nextElementSibling;
+      let countText = likeCountSpan.textContent;
+      let count = parseInt(countText.split(' ')[0]);
+
+      if (liked) {
+        count++;
+      } else {
+        count--;
+      }
+      likeCountSpan.textContent = count + ' likes';
+    }
+  </script>
+
+</body>
+</html>
